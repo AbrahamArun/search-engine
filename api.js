@@ -9,3 +9,7 @@ function getKeyWords(text, stopwords) {
         });
     return keywords;
 }
+
+module.exports = {
+    getKeyWords
+};
