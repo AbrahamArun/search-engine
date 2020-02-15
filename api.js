@@ -10,6 +10,18 @@ function getKeyWords(text, stopwords) {
     return keywords;
 }
 
+function getFrequency(keywords) {
+    return keywords.reduce((frequency, keyword) => {
+        if (!frequency[keyword]) {
+            frequency[keyword] = 1;
+        } else {
+            frequency[keyword] = frequency[keyword] + 1;
+        }
+        return frequency;
+    }, {});
+}
+
 module.exports = {
-    getKeyWords
+    getKeyWords,
+    getFrequency
 };
