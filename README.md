@@ -9,3 +9,6 @@
     * Tokenize and filter the keywords, extract only unique keywords
     * Find the sum of frequency of each of the keywords in each document and score each document
     * Sort the documents based on the score and return only the top K results
+
+## Data taken from external sources
+Some common [english stop words](https://raw.githubusercontent.com/6/stopwords-json/master/dist/en.json) taken from https://github.com/6/stopwords-json
