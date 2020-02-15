@@ -1,0 +1,19 @@
+{
+  "name": "search-engine",
+  "version": "1.0.0",
+  "description": "## Algorithm to find the most relevant documents/summaries",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AbrahamArun/search-engine.git"
+  },
+  "author": "Arun Abraham",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AbrahamArun/search-engine/issues"
+  },
+  "homepage": "https://github.com/AbrahamArun/search-engine#readme"
+}
