@@ -25,7 +25,7 @@ function getDocumentsWithFreq(documents, stopWords) {
     const documentsWithFreq = documents.map((document) => {
         const keywords = getKeyWords(document.summary, stopWords);
         const frequency = getFrequency(keywords);
-        return Object.assign({}, document, { frequency })
+        return { ...document, ...{ frequency } }
     });
     return documentsWithFreq;
 }
