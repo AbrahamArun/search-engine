@@ -12,3 +12,5 @@
 
 ## Data taken from external sources
 Some common [english stop words](https://raw.githubusercontent.com/6/stopwords-json/master/dist/en.json) taken from https://github.com/6/stopwords-json
+
+React setup has been forked from https://github.com/facebook/create-react-app
