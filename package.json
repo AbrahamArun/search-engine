@@ -1,22 +1,34 @@
 {
   "name": "search-engine",
   "version": "1.0.0",
-  "description": "## Algorithm to find the most relevant documents/summaries",
-  "main": "index.js",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-scripts": "3.4.0"
+  },
   "scripts": {
-    "test": "jest"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/AbrahamArun/search-engine.git"
+  "eslintConfig": {
+    "extends": "react-app"
   },
-  "author": "Arun Abraham",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/AbrahamArun/search-engine/issues"
-  },
-  "homepage": "https://github.com/AbrahamArun/search-engine#readme",
-  "devDependencies": {
-    "jest": "^25.1.0"
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
