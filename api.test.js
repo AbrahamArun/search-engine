@@ -1,6 +1,6 @@
 const data = require('./data.json');
 const stopWords = require('./stop-words.json');
-const { getKeyWords, getFrequency, getDocumentsWithFreq } = require('./api');
+const { getKeyWords, getFrequency, getDocumentsWithFreq, getMatchingDocuments } = require('./api');
 
 test('should get keywords and exclude all stop words', () => {
     const keywords = getKeyWords('a brain creativity mirror', stopWords);
@@ -27,3 +27,13 @@ test('should return documents with frequency for each', () => {
     expect(frequencyOfChange).toBe(2);
     expect(frequencyOfBook).toBe(1);
 });
+
+test('should find documents for query', () => {
+    const query = 'brain creativity mirror';
+    const documents = data.summaries;
+    const documentsWithFreq = getDocumentsWithFreq(documents, stopWords);
+    const matchingDocuments = getMatchingDocuments(query, 1, documentsWithFreq);
+    const topDocument = matchingDocuments[0];
+    const topDocumentId = topDocument.id;
+    expect(topDocumentId).toBe(50);
+})

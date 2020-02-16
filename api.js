@@ -30,8 +30,22 @@ function getDocumentsWithFreq(documents, stopWords) {
     return documentsWithFreq;
 }
 
+function getMatchingDocuments(query, N, documents) {
+    return documents.map((document) => {
+        const keywords = [...new Set(getKeyWords(query, stopWords))];
+        const totalFrequency = keywords.reduce((score, keyword) => {
+            if (document.frequency[keyword]) {
+                score = score + document.frequency[keyword];
+            }
+            return score;
+        }, 0);
+        return { ...document, ...{ score: totalFrequency } }
+    }).sort((a, b) => { return b.score - a.score }).slice(0, N);
+}
+
 module.exports = {
     getKeyWords,
     getFrequency,
-    getDocumentsWithFreq
+    getDocumentsWithFreq,
+    getMatchingDocuments
 };
