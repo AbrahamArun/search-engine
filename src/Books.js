@@ -9,10 +9,10 @@ function Books(props) {
         const selectedBooks = books.map((book, index) => {
             return (
                 <div key={index} className="book-card shadow">
-                    <h3 className="book-title">{book.title}</h3>
-                    <div className="summary gray-text">{book.summary}</div>
+                    <h3 id="book-title">{book.title}</h3>
+                    <div id="summary" className="gray-text">{book.summary}</div>
                     <hr className="gray-line" />
-                    <div className="author gray-text">{book.author}</div>
+                    <div id="author" className="gray-text">{book.author}</div>
                 </div>
             )
         })

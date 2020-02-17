@@ -21,7 +21,7 @@
     text-align: center;
   }
   
-  .book-title {
+  #book-title {
     max-width: 100%;
     height: 20px;
     overflow: hidden;
@@ -38,7 +38,7 @@
     color: #B0B0B0
   }
   
-  .summary {
+  #summary {
     max-width: 100%;
     height: 43px;
     margin: 10px;
@@ -50,7 +50,7 @@
     text-overflow: ellipsis;
   }
   
-  .author {
+  #author {
     margin: 10px;
   }
   
