@@ -4,7 +4,6 @@ import stopWords from './stop-words.json';
 import { getDocumentsWithFreq, getMatchingDocuments } from './api';
 import './App.css';
 
-
 const documents = data.summaries;
 const documentsWithFreq = getDocumentsWithFreq(documents, stopWords);
 
@@ -14,7 +13,7 @@ function getBooks(data) {
     books[bookId] = {
       author: author.author,
       title: data.titles[bookId],
-      summary: data.summaries.find(summary => summary.id === bookId)
+      summary: data.summaries.find(summary => summary.id === bookId).summary
     };
     return books;
   }, {});
@@ -54,14 +53,13 @@ function App() {
     setSearchTerm('');
     setSuggestions([]);
     setSelectedBooks(selectedBooks);
-    setSelectedBookId(null)
-
+    setSelectedBookId(null);
   }
 
   const onSuggestionSelected = (event) => {
     const bookId = event.target.value;
     setSearchTerm(books[bookId].title);
-    setSuggestions([])
+    setSuggestions([]);
     setSelectedBookId(bookId);
   }
 
@@ -71,8 +69,11 @@ function App() {
     }
     const selectedBooks = books.map((book, index) => {
       return (
-        <div key={index}>
-          {book.title}
+        <div key={index} className="book-card shadow">
+          <h3 className="book-title">{book.title}</h3>
+          <div className="summary gray-text">{book.summary}</div>
+          <hr className="gray-line" />
+          <div className="author gray-text">{book.author}</div>
         </div>
       )
     })
@@ -80,6 +81,7 @@ function App() {
   }
 
   const renderSuggestions = (books) => {
+    if (books.length === 0) return null;
     const titles = books.map((book, index) => {
       return (
         <li className={"sugestion"} key={index} onClick={onSuggestionSelected} value={book.id}>
@@ -89,7 +91,7 @@ function App() {
     })
 
     return (
-      <ul className="suggestions">
+      <ul className="suggestions shadow">
         {titles}
       </ul>
     );
