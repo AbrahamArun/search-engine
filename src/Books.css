@@ -1,0 +1,56 @@
+  
+  .selected-books {
+    position:absolute; 
+    top:150px;
+    width: 100%;
+    z-index: -1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .book-card {
+    flex: 1;
+    border-radius: 5px;
+    padding: 5px;
+    min-width: 200px;
+    height: 150px;
+    margin: 10px;
+    color: black;
+    text-align: center;
+  }
+  
+  .book-title {
+    max-width: 100%;
+    height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .gray-line {
+    height: 1px;
+    background-color: #ccc;
+    border: none;
+  }
+  
+  .gray-text {
+    color: #B0B0B0
+  }
+  
+  .summary {
+    max-width: 100%;
+    height: 43px;
+    margin: 10px;
+    font-size: 14px;
+    line-height: 1;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .author {
+    margin: 10px;
+  }
+  

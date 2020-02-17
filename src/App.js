@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import data from './data.json';
 import stopWords from './stop-words.json';
 import { getDocumentsWithFreq, getMatchingDocuments, getBooks } from './api';
+import Books from './Books';
 import './App.css';
 
 const documents = data.summaries;
@@ -50,23 +51,6 @@ function App() {
     setSelectedBookId(bookId);
   }
 
-  const renderSelectedBooks = (books) => {
-    if (books.length === 0) {
-      return <div>No books selected</div>
-    }
-    const selectedBooks = books.map((book, index) => {
-      return (
-        <div key={index} className="book-card shadow">
-          <h3 className="book-title">{book.title}</h3>
-          <div className="summary gray-text">{book.summary}</div>
-          <hr className="gray-line" />
-          <div className="author gray-text">{book.author}</div>
-        </div>
-      )
-    })
-    return selectedBooks;
-  }
-
   const renderSuggestions = (books) => {
     if (books.length === 0) return null;
     const titles = books.map((book, index) => {
@@ -103,9 +87,7 @@ function App() {
           </div>
         </form>
       </div>
-      <div className="selected-books">
-        {renderSelectedBooks(selectedBooks)}
-      </div>
+      <Books books={selectedBooks} />
     </div>
   );
 }
