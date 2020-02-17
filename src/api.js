@@ -39,7 +39,7 @@ function getMatchingDocuments(query, N, documents) {
             return score;
         }, 0);
         return { ...document, ...{ score: totalFrequency } }
-    }).sort((a, b) => { return b.score - a.score }).slice(0, N);
+    }).filter(doc => doc.score > 0).sort((a, b) => { return b.score - a.score }).slice(0, N);
 }
 
 module.exports = {
