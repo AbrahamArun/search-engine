@@ -42,9 +42,22 @@ function getMatchingDocuments(query, N, documents) {
     }).filter(doc => doc.score > 0).sort((a, b) => { return b.score - a.score }).slice(0, N);
 }
 
+function getBooks(data) {
+    return data.authors.reduce((books, author) => {
+        const bookId = author.book_id;
+        books[bookId] = {
+            author: author.author,
+            title: data.titles[bookId],
+            summary: data.summaries.find(summary => summary.id === bookId).summary
+        };
+        return books;
+    }, {});
+}
+
 module.exports = {
     getKeyWords,
     getFrequency,
     getDocumentsWithFreq,
-    getMatchingDocuments
+    getMatchingDocuments,
+    getBooks
 };

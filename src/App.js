@@ -1,24 +1,11 @@
 import React, { useState } from 'react';
 import data from './data.json';
 import stopWords from './stop-words.json';
-import { getDocumentsWithFreq, getMatchingDocuments } from './api';
+import { getDocumentsWithFreq, getMatchingDocuments, getBooks } from './api';
 import './App.css';
 
 const documents = data.summaries;
 const documentsWithFreq = getDocumentsWithFreq(documents, stopWords);
-
-function getBooks(data) {
-  return data.authors.reduce((books, author) => {
-    const bookId = author.book_id;
-    books[bookId] = {
-      author: author.author,
-      title: data.titles[bookId],
-      summary: data.summaries.find(summary => summary.id === bookId).summary
-    };
-    return books;
-  }, {});
-}
-
 const books = getBooks(data);
 
 function App() {
