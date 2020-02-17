@@ -1,6 +1,6 @@
-const data = require('./data.json');
-const stopWords = require('./stop-words.json');
-const { getKeyWords, getFrequency, getDocumentsWithFreq, getMatchingDocuments } = require('./api');
+import { getKeyWords, getFrequency, getDocumentsWithFreq, getMatchingDocuments } from './api';
+import data from './data.json';
+import stopWords from './stop-words.json';
 
 test('should get keywords and exclude all stop words', () => {
     const keywords = getKeyWords('a brain creativity mirror', stopWords);
