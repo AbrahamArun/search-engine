@@ -1,5 +1,9 @@
 # search-engine
 
+## Preview
+
+![Preview](./preview.gif)
+
 ## How to setup
 
 `yarn install && yarn start`
