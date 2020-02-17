@@ -6,7 +6,9 @@
 
 ## How to setup
 
-`yarn install && yarn start`
+`yarn install && yarn start` this will install all the modules and launch the application in your browser
+
+`yarn test` to run the tests
 
 ## Algorithm to find the most relevant documents/summaries
 
