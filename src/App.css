@@ -1,3 +1,57 @@
+body {
+  font-family: sans-serif;
+}
+
+.input-box {
+  border: 1px solid #999;
+  padding: 0.5rem;
+  width: 300px;
+}
+
 .App {
   text-align: center;
+}
+
+.search-container{
+  display: flex;
+  justify-content: center ;
+}
+
+.form {
+  display: flex;
+  flex-direction: row;
+}
+
+.search-box {
+  flex: 5;
+  flex-direction: column; 
+}
+
+.submit-box {
+  border: 1px solid #999;
+  padding: 0.5rem;
+  width: 100px;
+}
+
+.suggestions {
+  border: 1px solid #999;
+  border-top-width: 0;
+  list-style: none;
+  margin-top: 0;
+  max-height: 200px;
+  overflow-y: auto;
+  padding-left: 0;
+}
+
+.suggestions li {
+  padding: 0.5rem;
+  background-color: white;
+  
+}
+
+.selected-books {
+  position:absolute; 
+  top:150px;
+  width: 100%;
+  z-index: -1;
 }
