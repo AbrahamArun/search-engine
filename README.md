@@ -1,5 +1,9 @@
 # search-engine
 
+## How to setup
+
+`yarn install && yarn start`
+
 ## Algorithm to find the most relevant documents/summaries
 
 1. Pre-process the documents
