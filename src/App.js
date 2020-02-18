@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import data from './data.json';
 import stopWords from './stop-words.json';
-import { getDocumentsWithFreq, getMatchingDocuments, getBooks } from './api';
+import { getDocumentsWithFreq, getMatchingDocuments, getBooks } from './Search';
 import Books from './Books';
 import './App.css';
 

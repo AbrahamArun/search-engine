@@ -1,4 +1,4 @@
-import { getKeyWords, getFrequency, getDocumentsWithFreq, getMatchingDocuments } from './api';
+import { getKeyWords, getFrequency, getDocumentsWithFreq, getMatchingDocuments } from './Search';
 import data from './data.json';
 import stopWords from './stop-words.json';
 
