@@ -6,7 +6,7 @@ function Suggestions(props) {
     if (suggestions.length === 0) return null;
     const titles = suggestions.map((suggestion, index) => {
         return (
-            <li className={"sugestion"} key={index} onClick={props.onSelect} value={suggestion.id}>
+            <li id={suggestion.id} className={"sugestion"} key={index} onClick={props.onSelect} value={suggestion.id}>
                 {suggestion.title}
             </li>
         )
