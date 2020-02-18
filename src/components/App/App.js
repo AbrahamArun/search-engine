@@ -3,6 +3,7 @@ import data from '../../data/data';
 import stopWords from '../../data/stop-words';
 import { getDocumentsWithFreq, getMatchingDocuments, getBooks } from '../../utils/Search';
 import Books from '../Books/Books';
+import Suggestions from '../Suggestions/Suggestions';
 import './App.css';
 
 const documents = data.summaries;
@@ -51,23 +52,6 @@ function App() {
     setSelectedBookId(bookId);
   }
 
-  const renderSuggestions = (books) => {
-    if (books.length === 0) return null;
-    const titles = books.map((book, index) => {
-      return (
-        <li className={"sugestion"} key={index} onClick={onSuggestionSelected} value={book.id}>
-          {book.title}
-        </li>
-      )
-    })
-
-    return (
-      <ul className="suggestions shadow">
-        {titles}
-      </ul>
-    );
-  }
-
   return (
     <div className="App">
       <h1>Search books</h1>
@@ -80,7 +64,7 @@ function App() {
               onChange={handleChange}
               className="input-box"
             />
-            {renderSuggestions(suggestions)}
+            <Suggestions suggestions={suggestions} onSelect={onSuggestionSelected} />
           </div>
           <div>
             <input type="submit" value="Submit" className="submit-box" />
