@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import data from './data.json';
-import stopWords from './stop-words.json';
-import { getDocumentsWithFreq, getMatchingDocuments, getBooks } from './Search';
-import Books from './Books';
+import data from '../../data/data';
+import stopWords from '../../data/stop-words';
+import { getDocumentsWithFreq, getMatchingDocuments, getBooks } from '../../utils/Search';
+import Books from '../Books/Books';
 import './App.css';
 
 const documents = data.summaries;

@@ -1,4 +1,4 @@
-const stopWords = require('./stop-words.json');
+import stopWords from '../data/stop-words';
 
 // Utility to extract only useful terms from a text input
 export function getKeyWords(text, stopwords) {

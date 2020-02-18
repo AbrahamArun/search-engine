@@ -1,6 +1,6 @@
 import { getKeyWords, getFrequency, getDocumentsWithFreq, getMatchingDocuments } from './Search';
-import data from './data.json';
-import stopWords from './stop-words.json';
+import data from '../data/data';
+import stopWords from '../data/stop-words';
 
 test('should get keywords and exclude all stop words', () => {
     const keywords = getKeyWords('a brain creativity mirror', stopWords);
