@@ -33,9 +33,10 @@ export function getDocumentsWithFreq(documents, stopWords) {
 }
 
 export function getMatchingDocuments(query, N, documents) {
+    const keywords = [...new Set(getKeyWords(query, stopWords))];
     // Calculate the score for each document
     const relevantDocuments = documents.map((document) => {
-        const keywords = [...new Set(getKeyWords(query, stopWords))];
+
         const totalFrequency = keywords.reduce((score, keyword) => {
             if (document.frequency[keyword]) {
                 score = score + document.frequency[keyword];
