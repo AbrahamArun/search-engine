@@ -35,21 +35,26 @@ export function getDocumentsWithFreq(documents, stopWords) {
 export function getMatchingDocuments(query, N, documents) {
     const keywords = [...new Set(getKeyWords(query, stopWords))];
     // Calculate the score for each document
-    const relevantDocuments = documents.map((document) => {
-
-        const totalFrequency = keywords.reduce((score, keyword) => {
+    const length = documents.length;
+    const relevantDocuments = [];
+    for (let i = 0; i < length; i++) {
+        const document = documents[i];
+        // Calculate the score for a document
+        let totalFrequency = 0;
+        const numKeywords = keywords.length;
+        for (let j = 0; j < numKeywords; j++) {
+            const keyword = keywords[j];
             if (document.frequency[keyword]) {
-                score = score + document.frequency[keyword];
+                totalFrequency = totalFrequency + document.frequency[keyword];
             }
-            return score;
-        }, 0);
-        return { ...document, ...{ score: totalFrequency } }
-    })
-        .filter(doc => doc.score > 0)
-        // Sort in descending order of score
-        .sort((a, b) => { return b.score - a.score })
-        // return only the top N results
-        .slice(0, N);
+        }
+        if (totalFrequency > 0)
+            relevantDocuments.push({ ...document, ...{ score: totalFrequency } })
+    }
+    // Sort in descending order of score
+    relevantDocuments.sort((a, b) => { return b.score - a.score })
+    // return only the top N results
+    relevantDocuments.slice(0, N);
     return relevantDocuments;
 }
 
